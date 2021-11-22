@@ -1,1 +1,1 @@
-# pageobject_example
+# contains product task from Stepik QA automation course
