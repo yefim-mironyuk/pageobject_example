@@ -33,4 +33,4 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
-        time.sleep(1)
+        # time.sleep(1)
