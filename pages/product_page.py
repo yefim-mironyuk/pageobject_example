@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from .base_page import BasePage
-from .locators import ProductPageLocators, BasePageLocators
+from .locators import ProductPageLocators
 from selenium.webdriver.support import expected_conditions as EC
 
 
@@ -9,7 +9,6 @@ class ProductPage(BasePage):
     def click_add_to_basket(self):
         button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         button.click()
-        # BasePage.solve_quiz_and_get_code(self)
 
     def is_product_name_correct(self):
         message_name = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((
@@ -28,6 +27,3 @@ class ProductPage(BasePage):
     def should_disappear_of_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message didn't disappear"
 
-    def go_to_login_page(self):
-        login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
-        login_link.click()
